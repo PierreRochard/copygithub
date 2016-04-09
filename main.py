@@ -34,8 +34,8 @@ def clone_repo(repo, starred=False):
 
 
 if __name__ == '__main__':
-    for repo in gh.iter_all_repos():
+    for repo in gh.iter_repos():
         clone_repo(repo)
-    starred = gh.starred()
+    starred = gh.iter_starred()
     for repo in starred:
         clone_repo(repo, starred=True)
